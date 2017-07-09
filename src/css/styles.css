@@ -1,0 +1,84 @@
+/* Layout styling */
+body {
+  text-align: center;
+}
+
+#container {
+  margin: 0.5% 15%;
+
+}
+
+/* Main styles for playground */
+#playground {
+  width: 60%,
+  max-height: auto;
+  text-align: center;
+  border-radius: 2px;
+  background-color: #e6f9ff;
+  opacity: .8;
+  border: 12px solid #ffe6ff;
+  margin-left: 20,
+  margin-right: 20
+}
+
+/* Elements styling */
+#counter {
+  font-family: 'Swanky and Moo Moo';
+  font-size: 64px;
+  color: #660000;
+  font-weight: 600;
+  padding: 2px;
+  box-shadow: 10px 0 0 #ff8080, -10px 0 0 #ff8080;
+  background-color: #ffe6ff;
+}
+
+#box-arena {
+  text-align: left;
+  width: 80%;
+  height: 60%;
+  margin: 5% auto;
+  background-color: #e6ffff;
+  box-shadow: 14px 0 0 #ffb3b3, -14px 0 0 #ffb3b3;
+  border-radius: 5px;
+}
+
+/* Boxes, and just a general shaping */
+#add-box-btn,
+#del-box-btn,
+#start-game-btn,
+#refresh-btn,
+.game-box-btn {
+  height: 182px;
+  width: 182px;
+  font-size: 72px;
+  margin: 22px;
+}
+
+#add-box-btn,
+#del-box-btn {
+  background-color: #f5d6eb;
+  border: 12px solid #ebadd6;
+  color: #ff8080;
+}
+
+#start-game-btn {
+  font-family: 'Swanky and Moo Moo';
+  background-color: #ff8080;
+  border: 12px solid #ffd480;
+  width: 232px;
+  color: white;
+}
+
+#refresh-btn {
+  font-family: 'Swanky and Moo Moo';
+  background-color: #00ace6;
+  border: 12px solid #d279d2;
+  width: 232px;
+  color: white;
+}
+
+.game-box-btn {
+  background-color: #c6ffb3;
+  border: 12px solid #ffb380;
+  color: #ff8080;
+}
