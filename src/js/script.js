@@ -37,6 +37,8 @@ const COLORS = [
     '#aaaa55',
     '#94b8b8',
     '#008060',
+    '#287EB2',
+    '#FF4549',
   ]
 
 // ##
@@ -106,7 +108,7 @@ class Boxes {
   }
 
   addNewBox(classname) {
-    this.addBoxId.addEventListener('click', () => {
+    this.addBoxId.addEventListener('click', function() {
       var newbox = document.createElement('button');
       newbox.className = classname;
       newbox.innerHTML = '-';
@@ -114,11 +116,11 @@ class Boxes {
       this.boxArena.removeChild(this.removeBoxId);
       this.boxArena.appendChild(newbox);
       this.boxArena.appendChild(this.removeBoxId);
-    }, false);
+    }.bind(this), false);
   }
 
   removeBox() {
-    this.removeBoxId.addEventListener('click', () => {
+    this.removeBoxId.addEventListener('click', function() {
         var index = 0;
         while (this.boxArena.hasChildNodes()) {
             this.boxArena.removeChild(this.boxArena.childNodes[index]);
@@ -137,7 +139,7 @@ class Countdown {
   startTimer() {
     let timeLeft = this.time;
     this.counter.innerHTML = `Counter: ${timeLeft}`;
-    let timer = setInterval(() => {
+    let timer = setInterval(function() {
       timeLeft -= 1;
       if (timeLeft <= 0) {
         this.counter.innerHTML = 'Time out, You\'ve lost.. Sorry!';
@@ -230,10 +232,10 @@ function main() {
     playground.startGameButton.id);
 
   // Add event on start button click!
-  startBtn.addEventListener('click', () => {
+  startBtn.addEventListener('click', function() {
     // Start timer!
     if (boxArena.childNodes.length > 3) {
-      var timeElapsed = boxArena.childNodes.length;
+      var timeElapsed = boxArena.childNodes.length + 4;
       var chead = document.getElementById('counter');
       var counter = new Countdown(timeElapsed, chead);
       counter.startTimer();
@@ -256,7 +258,7 @@ function main() {
   reloadPage.addEventListener('click', reloadGame, false);
 
   function checkerValue(arr, counter, header) {
-    var timer = setInterval(() => {
+    var timer = setInterval(function() {
       var accum = 0;
       for (var i = 0; i < arr.length; i++) {
         var initial = arr[0];
@@ -273,7 +275,7 @@ function main() {
   }
 
   // Listen on clicked items, but only those appended previously!
-  document.addEventListener('click', (e) => {
+  document.addEventListener('click', function(e) {
       if (e.target.className == GAME_BUTTON_CLASS && actionGo) {
         e.target.style.backgroundColor = getRandomColor(COLORS);
       }
